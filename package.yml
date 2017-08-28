@@ -1,0 +1,18 @@
+name       : sofia-sip
+version    : 1.12.11
+release    : 1
+source     :
+    - https://netix.dl.sourceforge.net/project/sofia-sip/sofia-sip/1.12.11/sofia-sip-1.12.11.tar.gz : 2b01bc2e1826e00d1f7f57d29a2854b15fd5fe24695e47a14a735d195dd37c81
+license    : LGPL-2.1
+component  : programming.library
+summary    : Sofia-SIP is an open-source SIP User-Agent library
+description: |
+    Sofia-SIP is an open-source SIP User-Agent library, compliant with the IETF RFC3261 specification. It can be used as a building block for SIP client software for uses such as VoIP, IM, and many other real-time and person-to-person communication services.
+builddeps  :
+    - pkgconfig(check)
+setup      : |
+    %configure --disable-static
+build      : |
+    %make
+install    : |
+    %make_install
